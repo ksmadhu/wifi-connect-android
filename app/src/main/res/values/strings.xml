@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Wifi Connect</string>
+    <string name="transmit_button_idle">Transmit</string>
+    <string name="transmit_button_transmitting">Transmiting…</string>
+    <string name="open_client">Switch to Client</string>
+    <string name="open_transmit">Switch to Transmitter</string>
+    <string name="listening">Listening…</string>
+    <string name="waiting_to_listen">Waiting to start listening…</string>
+    <string name="connecting_to">Connecting to %s</string>
+    <string name="connected">Connected</string>
+</resources>

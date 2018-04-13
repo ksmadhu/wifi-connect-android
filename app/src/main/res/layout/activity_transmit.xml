@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.lisnr.wificonnect.TransmitActivity">
+
+    <EditText
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/ssid_field"
+        android:hint="WiFi Network Name"
+        android:inputType="textNoSuggestions"/>
+
+    <EditText
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/passphrase_field"
+        android:hint="Password (visible)"
+        android:inputType="textNoSuggestions"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/transmit_button"
+        android:text="Transmit tone"
+        android:enabled="false"/>
+
+</LinearLayout>
