@@ -1,4 +1,4 @@
-# LisnrWifiSample
+# wifi-connect-android
 
 ## Summary
 
