@@ -132,7 +132,7 @@ public class ClientActivity extends AppCompatActivity {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Intent service = new Intent(ClientActivity.this, LISNRAndroidService.class);
                 service.setAction(LISNRAndroidService.ACTION_START_LISTENING);
-                service.putExtra(LISNRAndroidService.EXTRA_JWT_APP_TOKEN, Config.APP_JWT);
+                service.putExtra(LISNRAndroidService.EXTRA_APP_TOKEN, Config.APP_TOKEN);
                 startService(service);
             } else {
                 Log.w(this.getClass().getSimpleName(), "Microphone permissions denied. Please enable them in app settings");
@@ -164,12 +164,12 @@ public class ClientActivity extends AppCompatActivity {
         } else {
             Intent service = new Intent(ClientActivity.this, LISNRAndroidService.class);
             service.setAction(LISNRAndroidService.ACTION_START_LISTENING);
-            service.putExtra(LISNRAndroidService.EXTRA_JWT_APP_TOKEN, Config.APP_JWT);
+            service.putExtra(LISNRAndroidService.EXTRA_APP_TOKEN, Config.APP_TOKEN);
             startService(service);
         }
 
         LocalBroadcastManager.getInstance(this).registerReceiver(mStateChangeBroadcastReceiver, new IntentFilter(LISNRAndroidService.ACTION_SDK_STATE_CHANGED));
-        LocalBroadcastManager.getInstance(this).registerReceiver(mToneHeardReceiver, new IntentFilter(LISNRAndroidService.ACTION_TONE_HEARD));
+        LocalBroadcastManager.getInstance(this).registerReceiver(mToneHeardReceiver, new IntentFilter(LISNRAndroidService.ACTION_RX_COMPLETED));
         registerReceiver(mWifiStatusChangeBroadcastReceiver, new IntentFilter(WifiManager.NETWORK_STATE_CHANGED_ACTION));
     }
 
@@ -181,7 +181,7 @@ public class ClientActivity extends AppCompatActivity {
 
         Intent service = new Intent(ClientActivity.this, LISNRAndroidService.class);
         service.setAction(LISNRAndroidService.ACTION_STOP_LISTENING);
-        service.putExtra(LISNRAndroidService.EXTRA_JWT_APP_TOKEN, Config.APP_JWT);
+        service.putExtra(LISNRAndroidService.EXTRA_APP_TOKEN, Config.APP_TOKEN);
         startService(service);
 
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mStateChangeBroadcastReceiver);

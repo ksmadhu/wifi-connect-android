@@ -117,7 +117,7 @@ public class TransmitActivity extends AppCompatActivity {
 
             Intent startBroadcasting = new Intent(getApplicationContext(), LISNRAndroidService.class);
             startBroadcasting.setAction(LISNRAndroidService.ACTION_START_BROADCASTING);
-            startBroadcasting.putExtra(LISNRAndroidService.EXTRA_JWT_APP_TOKEN, Config.APP_JWT);
+            startBroadcasting.putExtra(LISNRAndroidService.EXTRA_APP_TOKEN, Config.APP_TOKEN);
             startBroadcasting.putExtra(LISNRAndroidService.EXTRA_TONE_OBJECT, dataTone);
             startService(startBroadcasting);
         } catch (InvalidTonePayloadException | InvalidToneProfileException e) {

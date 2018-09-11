@@ -17,7 +17,7 @@ This sample illustrates how LISNR Tones may be used to facilitate automatic conn
 
 Download the LISNR SDK for Android from https://portal.lisnr.com and place the SDK AAR into `app/aars`.
 
-In the Config class of the WifiConnect app the field `APP_JWT` must be replaced with your valid app JWT.
+In the Config class of the WifiConnect app the field `APP_TOKEN` must be replaced with your valid app token.
 
 Install the WifiConnect app on both devices. Ensure the transmitter displays an SSID and passphrase field, and ensure the client claims to be listening.
 
